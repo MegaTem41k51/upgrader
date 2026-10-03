@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UPGRADE DEMO</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <div class="brand"><span class="logo">U</span><span>UPGRADE<span class="muted"> DEMO</span></span></div>
+  <nav>
+    <a class="active" href="#home">Главная</a>
+    <a href="#inventory">Инвентарь</a>
+    <a href="#profile">Профиль</a>
+  </nav>
+  <div class="account">
+    <div class="balance"><small>ДЕМО-БАЛАНС</small><b id="balance">10 000</b></div>
+    <button id="loginBtn" class="btn">Войти</button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="page">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">CS2 INSPIRED • DEMO MODE</div>
+      <h1>Апгрейд<br><span>виртуального</span> инвентаря</h1>
+      <p>Без реальных денег и вывода. Все предметы и единицы баланса существуют только внутри демо.</p>
+      <button class="primary" onclick="show('inventory')">Открыть инвентарь →</button>
+    </div>
+    <div class="orb"><div class="orb-inner">DEMO</div></div>
+  </div>
+  <div class="stats">
+    <div><b>100%</b><span>виртуальная среда</span></div>
+    <div><b>0 ₽</b><span>реальных платежей</span></div>
+    <div><b>OFF</b><span>вывод средств</span></div>
+  </div>
+  <div class="section-head"><h2>Предметы</h2><span>Демо-каталог</span></div>
+  <div id="featured" class="grid"></div>
+</section>
+
+<section id="inventory" class="page hidden">
+  <div class="section-head"><div><div class="eyebrow">YOUR ITEMS</div><h2>Инвентарь</h2></div><button class="btn" onclick="addDemoItem()">+ Демо-предмет</button></div>
+  <div id="inventoryGrid" class="grid"></div>
+</section>
+
+<section id="profile" class="page hidden">
+  <div class="profile-card">
+    <div class="avatar" id="avatar">?</div>
+    <div><div class="eyebrow">ACCOUNT</div><h2 id="profileName">Гость</h2><p id="profileId">Войдите, чтобы создать локальный демо-профиль.</p></div>
+  </div>
+  <div class="profile-grid">
+    <div class="panel"><span>Демо-баланс</span><strong id="profileBalance">10 000</strong><small>виртуальные единицы</small></div>
+    <div class="panel"><span>Предметов</span><strong id="itemCount">0</strong><small>в локальном инвентаре</small></div>
+    <div class="panel"><span>Вывод</span><strong>ЗАКРЫТ</strong><small>функция отсутствует</small></div>
+  </div>
+</section>
+</main>
+
+<div class="modal hidden" id="loginModal">
+ <div class="modal-box">
+  <button class="close" onclick="closeLogin()">×</button>
+  <div class="eyebrow">DEMO ACCOUNT</div><h2>Создать запись</h2>
+  <p>Имя сохраняется только локально в браузере для демо.</p>
+  <input id="nameInput" maxlength="20" placeholder="Введите ник">
+  <button class="primary wide" onclick="login()">Создать аккаунт</button>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<footer>UPGRADE DEMO · Не является платёжным сервисом · Вывод отключён</footer>
+<script src="app.js"></script>
+</body>
+</html>
